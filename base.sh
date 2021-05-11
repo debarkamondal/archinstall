@@ -1,15 +1,10 @@
 #!/bin/bash
 
-#variables
-#$drive=''
-#$boot=''
-#$root=''
-#$swap=''
-
 #updating mirrorlist
 reflector --verbose --latest 200 --sort rate --save /etc/pacman.d/mirrorlist
 
 #asking for install drive
+cd ~
 lsblk
 echo Enter the installation drive
 read drive
@@ -23,9 +18,9 @@ clean
 lsblk
 echo Only enter the '1' for sda1 and 'p1' for nvme0n1p1
 echo Enter boot drive
-read $boot
+read boot
 echo Enter root drive
-read $root
+read root
 
 #formating and mounting root partition
 mkfs.btrfs /dev/$drive$root
@@ -54,6 +49,6 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 #chrooting into /mnt
 chroot /mnt /bin/bash << EOF
-sudo pacman -Syu
+pacman -Syu
 EOF
 exit
