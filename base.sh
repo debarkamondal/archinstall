@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #variables
-$drive=''
-$boot=''
-$root=''
-$swap=''
+#$drive=''
+#$boot=''
+#$root=''
+#$swap=''
 
 #updating mirrorlist
 reflector --verbose --latest 200 --sort rate --save /etc/pacman.d/mirrorlist
