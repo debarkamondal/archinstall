@@ -100,5 +100,6 @@ exit
 
 EOF
 umount -a
-reboot
+rm -rf archinstall/
+#reboot
 exit
