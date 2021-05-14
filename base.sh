@@ -4,7 +4,7 @@ cd ~
 timedatectl set-ntp true
 sleep 5
 #updating mirrorlist
-reflector --verbose --latest 20 --sort rate --save /etc/pacman.d/mirrorlist
+#reflector --verbose --latest 200 --sort rate --save /etc/pacman.d/mirrorlist
 
 #asking for install drive
 lsblk
