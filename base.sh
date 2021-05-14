@@ -1,8 +1,9 @@
 #!/bin/bash
 
 timedatectl set-ntp true
+sleep 5
 #updating mirrorlist
-#reflector --verbose --latest 200 --sort rate --save /etc/pacman.d/mirrorlist
+reflector --verbose --latest 20 --sort rate --save /etc/pacman.d/mirrorlist
 
 #asking for install drive
 lsblk
@@ -11,7 +12,7 @@ read drive
 
 #creating partitions
 #sgdisk -n 0:0:+4GiB -t 0:8200 -c 0:swap /dev/$drive
-sgdisk -n 0:0:0 -t 0:8300 -c 0:root /dev/$drive
+#sgdisk -n 0:0:0 -t 0:8300 -c 0:root /dev/$drive
 
 #asking for parition numbers
 clean
