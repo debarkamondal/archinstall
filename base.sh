@@ -2,9 +2,8 @@
 
 cd
 timedatectl set-ntp true
-sleep 5
-#updating mirrorlist
-reflector --verbose --latest 200 --sort rate --save /etc/pacman.d/mirrorlist
+sleep 3
+
 
 #asking for install drive
 lsblk
@@ -23,6 +22,9 @@ echo Enter boot drive
 read boot
 echo Enter root drive
 read root
+
+#updating mirrorlist
+reflector --verbose --latest 200 --sort rate --save /etc/pacman.d/mirrorlist
 
 #formating and mounting root partition
 mkfs.btrfs -f /dev/$drive$root
