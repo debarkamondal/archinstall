@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd ~
 timedatectl set-ntp true
 sleep 5
 #updating mirrorlist
