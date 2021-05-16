@@ -34,7 +34,7 @@ mount -o noatime,compress=zstd,space_cache=v2,discard=async,subvol=@var /dev/$dr
 mount /dev/$drive$boot /mnt/boot
 
 #installing base system
-pacstrap /mnt base linux linux-firmware vim amd-ucode btrfs-progs
+pacstrap /mnt base linux linux-firmware vim btrfs-progs
 
 #generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
