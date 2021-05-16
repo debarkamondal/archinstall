@@ -1,22 +1,9 @@
 #!/bin/bash
 
-cd
-timedatectl set-ntp true
-sleep 3
-
-
-#asking for install drive
+#asking for parition numbers
 lsblk
 echo Enter the installation drive
 read drive
-
-#creating partitions
-#sgdisk -n 0:0:+4GiB -t 0:8200 -c 0:swap /dev/$drive
-#sgdisk -n 0:0:0 -t 0:8300 -c 0:root /dev/$drive
-
-#asking for parition numbers
-clean
-lsblk
 echo Only enter the '1' for sda1 and 'p1' for nvme0n1p1
 echo Enter boot drive
 read boot
@@ -27,6 +14,7 @@ read root
 reflector --verbose --latest 200 --sort rate --save /etc/pacman.d/mirrorlist
 
 #formating and mounting root partition
+wipefs /dev/$drive$root
 mkfs.btrfs -f /dev/$drive$root
 mount /dev/$drive$root /mnt
 cd /mnt
