@@ -11,7 +11,7 @@ echo Enter root drive
 read root
 
 #updating mirrorlist
-reflector --verbose --latest 50 --sort rate --save /etc/pacman.d/mirrorlist
+reflector --verbose --latest 200 --sort rate --save /etc/pacman.d/mirrorlist
 
 #formating and mounting root partition
 wipefs /dev/$drive$root
