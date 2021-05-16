@@ -52,7 +52,7 @@ pacstrap /mnt base linux linux-firmware vim amd-ucode btrfs-progs
 genfstab -U /mnt >> /mnt/etc/fstab
 
 #chrooting into /mnt
-arch-chroot /mnt /bin/bash << EOF
+arch-chroot /mnt << EOF
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 hwclock --systohc
 
