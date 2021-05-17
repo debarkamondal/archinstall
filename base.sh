@@ -85,8 +85,8 @@ systemctl enable firewalld
 systemctl enable acpid
 
 useradd -m dezire
-echo ermanno:password | chpasswd
-usermod -aG libvirt ermanno
+echo dezire:password | chpasswd
+usermod -aG libvirt dezire
 
 echo "dezire ALL=(ALL) ALL" >> /etc/sudoers.d/dezire
 
