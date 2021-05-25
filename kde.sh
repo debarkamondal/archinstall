@@ -11,10 +11,10 @@ git clone https://aur.archlinux.org/paru.git
 cd paru/
 makepkg -si --noconfirm
 
-paru -S --noconfirm zramd
+paru -S --noconfirm zramd google-chrome xdman
 sudo
 
-sudo pacman -S --noconfirm xorg sddm plasma firefox vlc alacritty
+sudo pacman -S --noconfirm xorg sddm plasma firefox vlc alacritty audacity kdeconnect ark
 
 sudo flatpak install -y spotify
 
