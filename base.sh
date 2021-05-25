@@ -15,7 +15,7 @@ read root
 clear
 echo Enter the number of mirrors
 read mirror
-reflector --verbose --latest $mirror --sort rate --save /etc/pacman.d/mirrorlist
+#reflector --verbose --latest $mirror --sort rate --save /etc/pacman.d/mirrorlist
 
 #formating and mounting root partition
 wipefs /dev/$drive$root
@@ -38,7 +38,7 @@ mount -o noatime,compress=zstd,space_cache=v2,discard=async,subvol=@var /dev/$dr
 mount /dev/$drive$boot /mnt/boot
 
 #installing base system
-pacstrap /mnt base linux linux-firmware vim btrfs-progs amd-ucode
+pacstrap /mnt base linux linux-firmware vim btrfs-progs
 
 #generating fstab
 genfstab -U /mnt >> /mnt/etc/fstab
