@@ -15,7 +15,7 @@ read root
 clear
 echo Enter the number of mirrors
 read mirror
-#reflector --verbose --latest $mirror --sort rate --save /etc/pacman.d/mirrorlist
+reflector --verbose --latest $mirror --sort rate --save /etc/pacman.d/mirrorlist
 
 #formating and mounting root partition
 wipefs /dev/$drive$root
