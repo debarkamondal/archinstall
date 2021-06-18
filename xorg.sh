@@ -9,11 +9,11 @@ git clone https://aur.archlinux.org/paru.git
 cd paru/
 makepkg -si --noconfirm
 
-paru -S --noconfirm zramd google-chrome xdman
-sudo
+paru -S --noconfirm zramd xdman brave picom-jonaburg-git
+sudo systemctl enable --now zramd.service
 
-sudo pacman -S --noconfirm xorg vlc alacritty audacity 
-
+sudo pacman -S --noconfirm xorg xorg-init vlc alacritty audacity 
+sudo systemctl enable zram 
 sudo flatpak install -y spotify
 
 sudo systemctl enable sddm
