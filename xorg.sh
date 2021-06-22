@@ -9,10 +9,10 @@ git clone https://aur.archlinux.org/paru.git
 cd paru/
 makepkg -si --noconfirm
 
-paru -S --noconfirm zramd xdman brave picom-jonaburg-git
+paru -S --noconfirm zramd xdman brave picom-jonaburg-git  nerd-fonts-fira-code nerd-font-hack starship python-psutils
 sudo systemctl enable --now zramd.service
 
-sudo pacman -S --noconfirm xorg xorg-init vlc alacritty audacity python-psutils
+sudo pacman -S --noconfirm xorg xorg-init vlc alacritty audacity fish lxqt-policykit
 sudo systemctl enable zram 
 sudo flatpak install -y spotify
 
