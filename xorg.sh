@@ -9,7 +9,7 @@ git clone https://aur.archlinux.org/paru.git
 cd paru/
 makepkg -si --noconfirm
 
-paru -S --noconfirm zramd xdman brave picom-jonaburg-git nerd-fonts-fira-code nerd-font-hack starship python-psutils
+paru -S --noconfirm zramd xdman brave picom-jonaburg-git nerd-fonts-fira-code nerd-font-hack starship python-psutils timeshift timeshift-autosnap
 echo "MAX_SIZE=2048"
 sudo systemctl enable --now zramd.service
 
